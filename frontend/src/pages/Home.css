@@ -1,0 +1,98 @@
+/* Home.css */
+.home-hero {
+  text-align: center;
+  padding: var(--space-10) 0 var(--space-12);
+  background: radial-gradient(ellipse at 50% 0%, rgba(124,92,252,0.12) 0%, transparent 70%);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-10);
+}
+
+.home-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 16px;
+  background: rgba(124,92,252,0.15);
+  border: 1px solid rgba(124,92,252,0.3);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--clr-accent-2);
+  margin-bottom: var(--space-6);
+}
+
+.home-hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: var(--space-5);
+}
+
+.home-hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--clr-text-2);
+  max-width: 520px;
+  margin: 0 auto var(--space-8);
+  line-height: 1.7;
+}
+
+.home-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.home-hero-stats {
+  display: flex;
+  gap: var(--space-6);
+  color: var(--clr-text-3);
+  font-size: 0.9rem;
+}
+.home-hero-stats strong { color: var(--clr-text); }
+
+/* Controls */
+.home-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.home-section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.home-sort {
+  display: flex;
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  gap: 3px;
+}
+
+.sort-btn {
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--clr-text-3);
+  transition: all var(--transition);
+}
+.sort-btn.active { background: var(--clr-accent); color: #fff; }
+.sort-btn:hover:not(.active) { color: var(--clr-text); background: var(--clr-surface-3); }
+
+/* Grid */
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-5);
+}
+
+@media (max-width: 600px) {
+  .profiles-grid { grid-template-columns: 1fr; }
+}

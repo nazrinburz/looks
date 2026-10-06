@@ -1,0 +1,86 @@
+/* ProfileCard.css */
+.profile-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-card-header {
+  position: relative;
+  padding: var(--space-6) var(--space-6) var(--space-4);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.profile-card-avatar {
+  width: 72px;
+  height: 72px;
+  border: 2px solid var(--clr-accent);
+  box-shadow: 0 0 20px rgba(124,92,252,0.3);
+  transition: transform var(--transition);
+}
+.profile-card:hover .profile-card-avatar {
+  transform: scale(1.05);
+}
+
+.profile-card-overall {
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  padding-top: 4px;
+}
+
+.profile-card-body {
+  padding: 0 var(--space-6) var(--space-6);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.profile-card-username {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--clr-text);
+}
+
+.profile-card-bio {
+  font-size: 0.875rem;
+  color: var(--clr-text-2);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.profile-card-ratings {
+  flex-wrap: wrap;
+}
+
+.profile-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--clr-border);
+  margin-top: auto;
+}
+
+.profile-card-reviews {
+  font-size: 0.8rem;
+  color: var(--clr-text-3);
+}
+
+.profile-card-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--clr-accent-2);
+  transition: transform var(--transition);
+}
+.profile-card:hover .profile-card-cta {
+  transform: translateX(4px);
+}

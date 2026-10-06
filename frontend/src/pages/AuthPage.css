@@ -1,0 +1,108 @@
+/* AuthPage.css */
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0 !important;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 60% 0%, rgba(124,92,252,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(244,114,182,0.08) 0%, transparent 50%),
+              var(--clr-bg);
+}
+
+.auth-card {
+  width: min(440px, calc(100% - 2 * var(--space-6)));
+  padding: var(--space-8);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.auth-logo {
+  font-size: 2.5rem;
+  background: var(--grad-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-2);
+}
+
+.auth-title {
+  font-size: 1.8rem;
+  background: var(--grad-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.auth-subtitle {
+  color: var(--clr-text-3);
+  font-size: 0.9rem;
+  margin-top: var(--space-1);
+}
+
+.auth-tabs {
+  display: flex;
+  background: var(--clr-surface-3);
+  border-radius: var(--radius-full);
+  padding: 4px;
+  margin-bottom: var(--space-6);
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--clr-text-3);
+  transition: all var(--transition);
+}
+.auth-tab.active {
+  background: var(--clr-accent);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(124,92,252,0.4);
+}
+.auth-tab:hover:not(.active) { color: var(--clr-text); }
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.auth-switch {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--clr-text-3);
+}
+
+.auth-link {
+  color: var(--clr-accent-2);
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Password strength */
+.pw-strength {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.pw-bars {
+  display: flex;
+  gap: 3px;
+  flex: 1;
+}
+
+.pw-bar {
+  height: 3px;
+  flex: 1;
+  border-radius: 2px;
+  transition: background var(--transition);
+}

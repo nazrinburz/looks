@@ -1,0 +1,45 @@
+/* EditProfilePage.css */
+.edit-container {
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.edit-card {
+  padding: var(--space-8);
+}
+
+.edit-header {
+  margin-bottom: var(--space-6);
+}
+
+.edit-title {
+  font-size: 1.6rem;
+  margin-bottom: var(--space-2);
+  background: var(--grad-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.edit-subtitle {
+  color: var(--clr-text-3);
+  font-size: 0.9rem;
+}
+
+.edit-avatar-section {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
