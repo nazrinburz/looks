@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import api from '../api';
 import { useAuth } from '../auth';
 import ReviewList from '../components/ReviewList';
@@ -19,6 +19,7 @@ function StatPill({ label, value, colorClass }) {
 export default function ProfilePage() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const { user } = useAuth();
 
   const [profile, setProfile] = useState(null);
@@ -30,7 +31,7 @@ export default function ProfilePage() {
   const [deleteReviewId, setDeleteReviewId] = useState(null);
 
   // Determine if we're looking at /profile/me
-  const isMePage = id === 'me';
+  const isMePage = location.pathname === '/profile/me';
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -41,8 +42,23 @@ export default function ProfilePage() {
     // Resolve "me" to actual profile id
     if (isMePage) {
       const { data, error: e } = await api.get('/me/profile');
-      if (e) { setError('You don\'t have a profile yet. Create one!'); setLoading(false); return; }
+      if (e) {
+        setError(e === 'No profile found' ? 'You don\'t have a profile yet. Create one!' : e);
+        setLoading(false);
+        return;
+      }
+      if (!data?.id) {
+        setError('The server returned an invalid profile.');
+        setLoading(false);
+        return;
+      }
       profileId = data.id;
+    }
+
+    if (!profileId || profileId === 'me') {
+      setError('You don\'t have a profile yet. Create one!');
+      setLoading(false);
+      return;
     }
 
     const { data, error: err } = await api.get(`/profiles/${profileId}`);
@@ -112,7 +128,7 @@ export default function ProfilePage() {
   }
 
   const isOwnProfile = user && profile.user_id === user.id;
-  const defaultAvatar = `https://i.pravatar.cc/300?u=${profile.username}`;
+  const defaultAvatar = `https://ui-avatars.com/api/?name=${profile.username}&background=262626&color=f5f5f5&size=300`;
   const hasReviewed = !!myReview;
 
   return (
@@ -215,6 +231,12 @@ export default function ProfilePage() {
               {profile.review_count}
             </span>
           </h2>
+          {!isOwnProfile && (
+            <p className="profile-review-guidance">
+              Reviews are anonymous. Rate Looks, Style, and Vibe from 1–10, then share one specific,
+              respectful suggestion about hair, outfit, grooming, presentation, or photo quality.
+            </p>
+          )}
           <ReviewList
             reviews={profile.reviews}
             currentUserId={user?.id}

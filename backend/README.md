@@ -24,7 +24,7 @@ pytest tests.py -v
 | `DATABASE_URL` | `./database.db` | SQLite file path |
 | `FLASK_DEBUG` | `False` | Enable debug mode |
 | `FLASK_PORT` | `5000` | Server port |
-| `CORS_ORIGINS` | localhost:5173,3000 | Allowed CORS origins |
+| `CORS_ORIGINS` | localhost/127.0.0.1:5173,3000 | Allowed CORS origins |
 
 ## API Reference
 
@@ -62,3 +62,10 @@ pytest tests.py -v
 Logs are written to `logs/app.log` and the console.
 
 Format: `[YYYY-MM-DD HH:MM:SS] LEVEL - METHOD /path - STATUS - Xms`
+
+## Demo profile images
+
+The five seeded demo profiles use stable adult portrait URLs from
+[Unsplash](https://unsplash.com/license). These images replace the local
+illustrated placeholders and are refreshed when `seed_data.py` runs. User-created
+profiles are not changed.

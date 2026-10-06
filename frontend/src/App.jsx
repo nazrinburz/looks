@@ -6,24 +6,27 @@ import ProfilePage from './pages/ProfilePage';
 import ReviewPage from './pages/ReviewPage';
 import EditProfilePage from './pages/EditProfilePage';
 import AuthPage from './pages/AuthPage';
+import { ThemeProvider } from './theme';
 
 export default function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/"                          element={<Home />} />
-          <Route path="/auth"                      element={<AuthPage />} />
-          <Route path="/profile/me"                element={<ProfilePage />} />
-          <Route path="/profile/create"            element={<EditProfilePage />} />
-          <Route path="/profile/:id"               element={<ProfilePage />} />
-          <Route path="/profile/:id/review"        element={<ReviewPage />} />
-          <Route path="/profile/:id/edit"          element={<EditProfilePage />} />
-          <Route path="*"                          element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/"                          element={<Home />} />
+            <Route path="/auth"                      element={<AuthPage />} />
+            <Route path="/profile/me"                element={<ProfilePage />} />
+            <Route path="/profile/create"            element={<EditProfilePage />} />
+            <Route path="/profile/:id"               element={<ProfilePage />} />
+            <Route path="/profile/:id/review"        element={<ReviewPage />} />
+            <Route path="/profile/:id/edit"          element={<EditProfilePage />} />
+            <Route path="*"                          element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 

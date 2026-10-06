@@ -34,9 +34,14 @@ class Config:
     MAX_RATING: int = 10
 
     # CORS – restrict in production
-    CORS_ORIGINS: list = os.getenv(
-        "CORS_ORIGINS", "http://localhost:5173,http://localhost:3000"
-    ).split(",")
+    CORS_ORIGINS: list = [
+        origin.strip()
+        for origin in os.getenv(
+            "CORS_ORIGINS",
+            "http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000,http://127.0.0.1:3000",
+        ).split(",")
+        if origin.strip()
+    ]
 
     # Pagination defaults
     DEFAULT_PAGE_LIMIT: int = 20

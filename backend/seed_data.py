@@ -28,35 +28,35 @@ USERS = [
         "email": "alex@example.com",
         "password": "password123",
         "bio": "Fitness enthusiast, gym 6 days a week 💪",
-        "avatar_url": "https://i.pravatar.cc/300?img=1",
+        "avatar_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
     },
     {
         "username": "jordan_creative",
         "email": "jordan@example.com",
         "password": "password123",
         "bio": "Designer & artist ☕ Always creating",
-        "avatar_url": "https://i.pravatar.cc/300?img=2",
+        "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80",
     },
     {
         "username": "sam_tech",
         "email": "sam@example.com",
         "password": "password123",
         "bio": "Software engineer | Open source contributor",
-        "avatar_url": "https://i.pravatar.cc/300?img=3",
+        "avatar_url": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80",
     },
     {
         "username": "casey_art",
         "email": "casey@example.com",
         "password": "password123",
         "bio": "Photographer & artist 📸 Exploring the world",
-        "avatar_url": "https://i.pravatar.cc/300?img=4",
+        "avatar_url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
     },
     {
         "username": "morgan_travel",
         "email": "morgan@example.com",
         "password": "password123",
         "bio": "Travel blogger ✈️ Adventure seeker",
-        "avatar_url": "https://i.pravatar.cc/300?img=5",
+        "avatar_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
     },
 ]
 
@@ -64,16 +64,16 @@ USERS = [
 # Each reviewer is identified by username (resolved to ID below).
 REVIEWS = {
     "alex_fit": [
-        {"reviewer": "jordan_creative", "looks": 8, "style": 7, "vibe": 8, "text": "Great energy! Really consistent look."},
-        {"reviewer": "sam_tech",        "looks": 7, "style": 8, "vibe": 8, "text": "Very consistent, cool style overall."},
-        {"reviewer": "casey_art",       "looks": 8, "style": 7, "vibe": 8, "text": "Cool style, solid gym aesthetic."},
-        {"reviewer": "morgan_travel",   "looks": 8, "style": 8, "vibe": 7, "text": "Motivational presence."},
+        {"reviewer": "jordan_creative", "looks": 8, "style": 7, "vibe": 8, "text": "A cleaner fade or slightly longer textured top could frame your face well. Your athletic style already feels consistent."},
+        {"reviewer": "sam_tech",        "looks": 7, "style": 8, "vibe": 8, "text": "The gym-ready look suits you. Try one sharper color accent or a more structured jacket to make the outfit feel more intentional."},
+        {"reviewer": "casey_art",       "looks": 8, "style": 7, "vibe": 8, "text": "Your energy comes through clearly. A fitted overshirt and coordinated sneakers could elevate the athletic aesthetic without making it feel overdone."},
+        {"reviewer": "morgan_travel",   "looks": 8, "style": 8, "vibe": 7, "text": "Strong, active presence. If fitness is one of your goals, consistent strength training could complement the confident style you already have."},
     ],
     "jordan_creative": [
-        {"reviewer": "alex_fit",        "looks": 8, "style": 9, "vibe": 8, "text": "Excellent aesthetic, very artistic."},
-        {"reviewer": "sam_tech",        "looks": 8, "style": 8, "vibe": 9, "text": "Amazing style, love the creative edge."},
-        {"reviewer": "casey_art",       "looks": 7, "style": 8, "vibe": 8, "text": "Very artistic, great creative eye."},
-        {"reviewer": "morgan_travel",   "looks": 8, "style": 9, "vibe": 8, "text": "Sleek and polished look."},
+        {"reviewer": "alex_fit",        "looks": 8, "style": 9, "vibe": 8, "text": "The creative direction is strong. A longer hairstyle or more defined shape around the sides could make the overall look even more distinctive."},
+        {"reviewer": "sam_tech",        "looks": 8, "style": 8, "vibe": 9, "text": "Great visual identity. Try layering a plain overshirt over the statement piece so the outfit has more depth without losing its artistic edge."},
+        {"reviewer": "casey_art",       "looks": 7, "style": 8, "vibe": 8, "text": "Your eye for composition shows in your style. A warmer neutral or one repeated accessory could make the color palette feel more cohesive."},
+        {"reviewer": "morgan_travel",   "looks": 8, "style": 9, "vibe": 8, "text": "Polished and expressive. A slightly more tailored fit would sharpen the silhouette while keeping the relaxed creative personality."},
     ],
     "sam_tech": [
         {"reviewer": "alex_fit",        "looks": 7, "style": 6, "vibe": 7, "text": "Cool person, nice tech energy."},
@@ -82,10 +82,10 @@ REVIEWS = {
         {"reviewer": "morgan_travel",   "looks": 7, "style": 7, "vibe": 7, "text": "Solid and dependable vibe."},
     ],
     "casey_art": [
-        {"reviewer": "alex_fit",        "looks": 8, "style": 8, "vibe": 9, "text": "Amazing artist, incredible style."},
-        {"reviewer": "jordan_creative", "looks": 9, "style": 8, "vibe": 9, "text": "Best vibe, outstanding photography."},
-        {"reviewer": "sam_tech",        "looks": 8, "style": 9, "vibe": 8, "text": "Creative and expressive."},
-        {"reviewer": "morgan_travel",   "looks": 8, "style": 8, "vibe": 9, "text": "Artistic soul with great style."},
+        {"reviewer": "alex_fit",        "looks": 8, "style": 8, "vibe": 9, "text": "The artistic presence is memorable. A cleaner hair shape or one bold accessory could give the portrait an even clearer focal point."},
+        {"reviewer": "jordan_creative", "looks": 9, "style": 8, "vibe": 9, "text": "Excellent visual storytelling. Try a more deliberate contrast between the outfit and background so the subject stands out in every photo."},
+        {"reviewer": "sam_tech",        "looks": 8, "style": 9, "vibe": 8, "text": "Creative and expressive. A consistent jacket or color theme across photos could make the portfolio feel more connected."},
+        {"reviewer": "morgan_travel",   "looks": 8, "style": 8, "vibe": 9, "text": "Warm, confident energy. Slightly more directional lighting would highlight the styling and make the images feel more editorial."},
     ],
     "morgan_travel": [
         {"reviewer": "alex_fit",        "looks": 7, "style": 8, "vibe": 9, "text": "Fun energy, love the vibe!"},
@@ -94,6 +94,29 @@ REVIEWS = {
         {"reviewer": "casey_art",       "looks": 8, "style": 7, "vibe": 9, "text": "Wanderlust vibes, great look."},
     ],
 }
+
+
+def refresh_demo_content(conn) -> None:
+    """Keep the checked-in demo users safe and consistent across restarts."""
+    for user in USERS:
+        conn.execute(
+            "UPDATE profiles SET avatar_url = ? WHERE user_id = "
+            "(SELECT id FROM users WHERE username = ?)",
+            (user["avatar_url"], user["username"]),
+        )
+
+    for subject_username, review_list in REVIEWS.items():
+        for review in review_list:
+            conn.execute(
+                """
+                UPDATE reviews
+                SET feedback_text = ?
+                WHERE reviewed_profile_id = (SELECT id FROM profiles
+                                              WHERE user_id = (SELECT id FROM users WHERE username = ?))
+                  AND reviewer_user_id = (SELECT id FROM users WHERE username = ?)
+                """,
+                (review["text"], subject_username, review["reviewer"]),
+            )
 
 
 # ---------------------------------------------------------------------------
@@ -107,6 +130,8 @@ def seed() -> None:
     with get_db() as conn:
         existing = conn.execute("SELECT COUNT(*) AS cnt FROM users").fetchone()
         if existing["cnt"] > 0:
+            refresh_demo_content(conn)
+            conn.commit()
             print("Database already seeded – skipping.")
             return
 
@@ -159,7 +184,7 @@ def seed() -> None:
         conn.commit()
 
     total_reviews = sum(len(v) for v in REVIEWS.values())
-    print(f"✅  Seeded: {len(USERS)} users, {len(USERS)} profiles, {total_reviews} reviews.")
+    print(f"Seeded: {len(USERS)} users, {len(USERS)} profiles, {total_reviews} reviews.")
 
 
 if __name__ == "__main__":

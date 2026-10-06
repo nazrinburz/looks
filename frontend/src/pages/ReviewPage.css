@@ -26,6 +26,13 @@
   padding: var(--space-8);
 }
 
+.review-form-guidance {
+  margin: calc(var(--space-3) * -1) 0 var(--space-5);
+  color: var(--clr-text-3);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
 .review-form-title {
   margin-bottom: var(--space-6);
   font-size: 1.4rem;
@@ -96,7 +103,7 @@
   -webkit-appearance: none;
   width: 22px; height: 22px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--clr-accent-text);
   border: 3px solid currentColor;
   box-shadow: 0 2px 8px rgba(0,0,0,0.4);
   cursor: pointer;

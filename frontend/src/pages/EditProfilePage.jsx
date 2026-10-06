@@ -15,6 +15,7 @@ export default function EditProfilePage() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [avatarError, setAvatarError] = useState('');
 
   // "Create profile" mode
   const [creating, setCreating] = useState(false);
@@ -56,6 +57,30 @@ export default function EditProfilePage() {
     setTimeout(() => navigate('/profile/me'), 1200);
   }
 
+  function handleAvatarFile(event) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    setAvatarError('');
+    if (!file.type.startsWith('image/')) {
+      setAvatarError('Please choose an image file.');
+      event.target.value = '';
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      setAvatarError('Image must be 5 MB or smaller.');
+      event.target.value = '';
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (typeof reader.result === 'string') setAvatarUrl(reader.result);
+    };
+    reader.onerror = () => setAvatarError('Unable to read that image. Please try another file.');
+    reader.readAsDataURL(file);
+  }
+
   if (loading) {
     return (
       <div className="page-wrapper">
@@ -64,7 +89,7 @@ export default function EditProfilePage() {
     );
   }
 
-  const previewAvatar = avatarUrl || `https://i.pravatar.cc/300?u=${user?.username}`;
+  const previewAvatar = avatarUrl || `https://ui-avatars.com/api/?name=${user?.username}&background=262626&color=f5f5f5&size=300`;
 
   return (
     <div className="edit-page page-wrapper">
@@ -92,27 +117,32 @@ export default function EditProfilePage() {
                 src={previewAvatar}
                 alt="Avatar preview"
                 className="avatar avatar-xl"
-                onError={(e) => { e.target.src = `https://i.pravatar.cc/300?u=${user?.username}`; }}
+                onError={(e) => { e.target.src = `https://ui-avatars.com/api/?name=${user?.username}&background=262626&color=f5f5f5&size=300`; }}
               />
               <div className="form-group" style={{ flex: 1 }}>
                 <label className="form-label" htmlFor="avatar-url">Avatar URL</label>
+                <label className="btn btn-ghost btn-sm avatar-upload-label" htmlFor="avatar-file">
+                  Choose picture from computer
+                </label>
+                <input
+                  id="avatar-file"
+                  type="file"
+                  accept="image/*"
+                  className="avatar-file-input"
+                  onChange={handleAvatarFile}
+                />
                 <input
                   id="avatar-url"
                   type="url"
                   className="form-input"
-                  placeholder="https://i.pravatar.cc/300?img=1"
+                  placeholder="https://ui-avatars.com/api/?name=username"
                   value={avatarUrl}
                   onChange={(e) => setAvatarUrl(e.target.value)}
                 />
+                {avatarError && <p className="form-error">{avatarError}</p>}
                 <p className="form-hint">
-                  Try: <a
-                    href="https://i.pravatar.cc/300?img=1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: 'var(--clr-accent-2)' }}
-                  >
-                    i.pravatar.cc
-                  </a> for free avatars
+                  Choose an image from your computer, or paste an image URL.
+                  Use an adult image you have permission to share.
                 </p>
               </div>
             </div>

@@ -1,8 +1,6 @@
-/* Home.css */
 .home-hero {
   text-align: center;
   padding: var(--space-10) 0 var(--space-12);
-  background: radial-gradient(ellipse at 50% 0%, rgba(124,92,252,0.12) 0%, transparent 70%);
   border-radius: var(--radius-xl);
   margin-bottom: var(--space-10);
 }
@@ -25,6 +23,7 @@
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   line-height: 1.1;
   margin-bottom: var(--space-5);
+  color: var(--clr-text);
 }
 
 .home-hero-subtitle {
@@ -83,7 +82,7 @@
   color: var(--clr-text-3);
   transition: all var(--transition);
 }
-.sort-btn.active { background: var(--clr-accent); color: #fff; }
+.sort-btn.active { background: var(--clr-accent); color: var(--clr-accent-text); }
 .sort-btn:hover:not(.active) { color: var(--clr-text); background: var(--clr-surface-3); }
 
 /* Grid */

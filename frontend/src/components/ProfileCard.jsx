@@ -15,7 +15,7 @@ export default function ProfileCard({ profile }) {
   const navigate = useNavigate();
   const { id, username, bio, avatar_url, avg_looks, avg_style, avg_vibe, avg_overall, review_count } = profile;
 
-  const defaultAvatar = `https://i.pravatar.cc/300?u=${username}`;
+  const defaultAvatar = `https://ui-avatars.com/api/?name=${username}&background=262626&color=f5f5f5&size=300`;
 
   return (
     <article

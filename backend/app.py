@@ -171,8 +171,11 @@ def list_profiles():
     GET /api/profiles?limit=20&offset=0&sort=rating|newest
     Returns paginated list of all profiles.
     """
-    limit = min(int(request.args.get("limit", config.DEFAULT_PAGE_LIMIT)), 100)
-    offset = max(int(request.args.get("offset", 0)), 0)
+    try:
+        limit = min(max(int(request.args.get("limit", config.DEFAULT_PAGE_LIMIT)), 1), 100)
+        offset = max(int(request.args.get("offset", 0)), 0)
+    except (TypeError, ValueError):
+        return jsonify({"error": "limit and offset must be integers"}), 400
     sort = request.args.get("sort", "rating")
 
     order_clause = "p.avg_overall DESC, p.review_count DESC"

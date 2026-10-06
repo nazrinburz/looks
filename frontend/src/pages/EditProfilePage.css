@@ -15,10 +15,7 @@
 .edit-title {
   font-size: 1.6rem;
   margin-bottom: var(--space-2);
-  background: var(--grad-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--clr-text);
 }
 
 .edit-subtitle {
@@ -35,6 +32,19 @@
   border-radius: var(--radius-lg);
   padding: var(--space-5);
   flex-wrap: wrap;
+}
+
+.avatar-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.avatar-upload-label {
+  width: fit-content;
+  cursor: pointer;
 }
 
 .edit-actions {

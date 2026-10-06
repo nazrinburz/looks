@@ -13,6 +13,7 @@ A full-stack community platform where users create profiles and the community ra
 - ✏️ Edit & delete your own reviews
 - 🗑 Delete your own profile (cascades reviews)
 - 🌱 5 pre-loaded profiles with 20 reviews on first run
+- 🖼️ Demo profiles use adult portrait photos served by Unsplash under its free license
 
 ## Tech Stack
 
@@ -68,7 +69,7 @@ looks_app/
         ├── pages/      # Home, ProfilePage, ReviewPage, EditProfilePage, AuthPage
         ├── components/ # Navbar, ProfileCard, ReviewList, RatingBreakdown
         ├── api.js      # Fetch wrapper
-        └── auth.js     # Auth context
+        └── auth.jsx    # Auth context
 ```
 
 ## API

@@ -1,13 +1,10 @@
-/* AuthPage.css */
 .auth-page {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 0 !important;
   min-height: 100vh;
-  background: radial-gradient(ellipse at 60% 0%, rgba(124,92,252,0.12) 0%, transparent 60%),
-              radial-gradient(ellipse at 20% 80%, rgba(244,114,182,0.08) 0%, transparent 50%),
-              var(--clr-bg);
+  background: var(--clr-bg);
 }
 
 .auth-card {
@@ -22,19 +19,13 @@
 
 .auth-logo {
   font-size: 2.5rem;
-  background: var(--grad-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--clr-text);
   margin-bottom: var(--space-2);
 }
 
 .auth-title {
   font-size: 1.8rem;
-  background: var(--grad-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--clr-text);
 }
 
 .auth-subtitle {
@@ -62,8 +53,8 @@
 }
 .auth-tab.active {
   background: var(--clr-accent);
-  color: #fff;
-  box-shadow: 0 2px 12px rgba(124,92,252,0.4);
+  color: var(--clr-accent-text);
+  box-shadow: var(--shadow-sm);
 }
 .auth-tab:hover:not(.active) { color: var(--clr-text); }
 

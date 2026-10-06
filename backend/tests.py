@@ -118,7 +118,7 @@ class TestProfiles:
         # Create profile
         create_resp = client.post(
             "/api/profiles",
-            json={"bio": "Test bio", "avatar_url": "https://i.pravatar.cc/300?img=10"},
+            json={"bio": "Test bio", "avatar_url": "https://ui-avatars.com/api/?name=test"},
             headers=_auth_headers(self.token),
         )
         self.profile_id = create_resp.get_json().get("id")
@@ -130,7 +130,7 @@ class TestProfiles:
         token = u["token"]
         resp = client.post(
             "/api/profiles",
-            json={"bio": "A new bio", "avatar_url": "https://i.pravatar.cc/300?img=20"},
+            json={"bio": "A new bio", "avatar_url": "https://ui-avatars.com/api/?name=newtest"},
             headers=_auth_headers(token),
         )
         assert resp.status_code == 201
@@ -183,7 +183,7 @@ class TestReviews:
 
         create_resp = client.post(
             "/api/profiles",
-            json={"bio": "Profile to be reviewed", "avatar_url": "https://i.pravatar.cc/300"},
+            json={"bio": "Profile to be reviewed", "avatar_url": "https://ui-avatars.com/api/?name=review"},
             headers=_auth_headers(self.owner_token),
         )
         self.profile_id = create_resp.get_json().get("id")

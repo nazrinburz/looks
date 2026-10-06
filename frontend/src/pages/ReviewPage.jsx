@@ -19,6 +19,7 @@ function RatingInput({ label, value, onChange, colorClass, id }) {
         value={value}
         onChange={(e) => onChange(parseInt(e.target.value, 10))}
         className={`rating-slider ${colorClass}`}
+        style={{ '--pct': `${((value - 1) / 9) * 100}%` }}
       />
       <div className="rating-slider-ticks">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
@@ -107,7 +108,7 @@ export default function ReviewPage() {
     );
   }
 
-  const defaultAvatar = `https://i.pravatar.cc/300?u=${profile.username}`;
+  const defaultAvatar = `https://ui-avatars.com/api/?name=${profile.username}&background=262626&color=f5f5f5&size=300`;
 
   return (
     <div className="review-page page-wrapper">
@@ -140,6 +141,10 @@ export default function ReviewPage() {
           <h2 className="review-form-title">
             {editId ? '✏️ Edit Your Review' : '★ Rate This Profile'}
           </h2>
+          <p className="review-form-guidance">
+            Be specific and respectful. Focus on presentation, such as hairstyle, outfit, grooming,
+            colors, or photo composition. Do not make personal attacks or comments about someone’s body.
+          </p>
 
           {error && <div className="alert alert-error">{error}</div>}
 

@@ -10,11 +10,7 @@
 }
 
 .profile-hero-bg {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 80% 0%, rgba(124,92,252,0.08) 0%, transparent 60%),
-              radial-gradient(ellipse at 0% 100%, rgba(244,114,182,0.06) 0%, transparent 50%);
-  pointer-events: none;
+  display: none;
 }
 
 .profile-hero-content {
@@ -37,10 +33,7 @@
 
 .profile-hero-username {
   font-size: clamp(1.5rem, 3vw, 2.2rem);
-  background: var(--grad-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--clr-text);
   margin-bottom: var(--space-2);
 }
 
@@ -95,6 +88,13 @@
 .profile-review-count {
   font-size: 0.875rem;
   color: var(--clr-text-3);
+}
+
+.profile-review-guidance {
+  margin: calc(var(--space-4) * -1) 0 var(--space-5);
+  color: var(--clr-text-3);
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 .profile-hero-actions {
